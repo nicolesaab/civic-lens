@@ -1,9 +1,57 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Nicole Saab */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 
 /* Root Variables */
@@ -39,27 +87,245 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
+#skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#skip:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
 
 /* ///ADD/// Navigation Styles */
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  font-size: 1.1rem;
+  font: var(--font-heading);
+}
+
+nav a:hover {
+  background-color: var(--blue-bulletin);
+}
+
 
 /* ///ADD/// Global Layout Styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--watchdog-white);
+  line-height: 1.35;
+  padding: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+
+header, footer {
+  background-color: var(--blue-bulletin);
+  text-align: center;
+  color: var(--watchdog-white);
+  padding: 1rem;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+main {
+  padding: 0 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+section {
+  border: 1px solid #000000;
+  margin: 0.25rem auto;
+  padding: 0.5rem;
+  width: calc(100% - 2rem);
+  max-width: 400px;
+  box-shadow: -10px 10px 30px var(--truth-text);
+}
+
+#video1, #video2 {
+  background-color: var(--news-flash);
+  margin: 0.25rem auto;
+  padding: 0.5rem;
+}
+
+video {
+  display: block;
+  width: 100%;
+}
+
+#subscribe {
+  background-color: var(--news-flash);
+}
 
 /* ///ADD/// Global Text Styles */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  align-items: left;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 0.5rem 0;
+}
+
+blockquote {
+  text-align: center;
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  
+}
+
+button[type="submit"] {
+  padding: 1rem;
+  font-size: 1rem;
+  width: 50%;
+  text-align: center;
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  border: none;
+  margin-top: 1rem;
+  box-shadow: -10px 10px 30px var(--truth-text);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+}
 
 
 /* ///ADD/// medium styles 620px */
+@media screen and (max-width: 620px) {
+  #menu-toggle:checked + .menu-button + .menu {
+    display: flex;
+  }
+
+.menu-button {
+  display: inline-block;
+  background-color: var(--blue-bulletin);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+section {
+  max-width: 100%;
+}
+
+}
 
 
 /* ///ADD/// large styles 920px */
+@media screen and (max-width: 920px) {
+  section #video1, #video2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
 
 
 /* ///ADD/// x-large styles 1024px */
+@media screen and (max-width: 1024px) {
+  section #video1, #video2 {
+    grid-template-columns: 1fr 1fr;
+  }
 
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+
+  nav a,
+  .social-links li a {
+    background-color: var(--blue-bulletin);
+  }
+
+  #theme-toggle {
+    background-color: var(--truth-text);
+    border-color: var(--watchdog-white);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+
+  nav a,
+  .social-links li a {
+    background-color: var(--news-flash);
+  }
+
+  #theme-toggle {
+    background-color: var(--watchdog-white);
+    border-color: var(--blue-bulletin);
+  }
+}
+
 
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+  nav:has(#menu-toggle:checked) ul.menu {
+    display: block;
+  }
 }
